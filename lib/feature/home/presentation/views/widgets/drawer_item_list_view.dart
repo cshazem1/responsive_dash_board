@@ -28,7 +28,8 @@ class _DrawerItemListViewState extends State<DrawerItemListView> {
   int activeIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return SliverList.builder(
+
       itemCount: items.length,
       itemBuilder: (context, index) {
         return Padding(
@@ -37,14 +38,11 @@ class _DrawerItemListViewState extends State<DrawerItemListView> {
             drawerItemModel: items[index],
             active: index == activeIndex,
             onClick: () {
-
-              if(activeIndex!= index)
-             { setState(() {
-                activeIndex = index;
-              });
-               print("wow");
-             }
-
+              if (activeIndex != index) {
+                setState(() {
+                  activeIndex = index;
+                });
+              }
             },
           ),
         );
