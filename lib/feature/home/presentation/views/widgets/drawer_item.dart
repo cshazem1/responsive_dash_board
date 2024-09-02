@@ -20,7 +20,7 @@ class DrawerItem extends StatelessWidget {
       child:
       AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        padding: active?EdgeInsets.symmetric(horizontal: 5):null,
+        padding: active?const EdgeInsets.symmetric(horizontal: 5):null,
         height: active ? 32.0 : 30.0,
         curve: Curves.elasticInOut,
         child:   active
