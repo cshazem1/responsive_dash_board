@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/core/models/drawer_item_model.dart';
-
 import 'active&inactive_item.dart';
 
 class DrawerItem extends StatelessWidget {
@@ -14,23 +13,18 @@ class DrawerItem extends StatelessWidget {
   final void Function()? onClick;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onClick,
-
-      child:
-      AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        padding: active?const EdgeInsets.symmetric(horizontal: 5):null,
-        height: active ? 32.0 : 30.0,
-        curve: Curves.elasticInOut,
-        child:   active
-            ? ActiveDrawerItem(drawerItemModel: drawerItemModel)
-            : InActiveDrawerItem(drawerItemModel: drawerItemModel),
+    return IntrinsicHeight(
+      child: GestureDetector(
+        onTap: onClick,
+        child: AnimatedCrossFade(
+          firstChild: ActiveDrawerItem(drawerItemModel: drawerItemModel),
+          secondChild: InActiveDrawerItem(drawerItemModel: drawerItemModel),
+          crossFadeState:
+              active ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+          firstCurve: Curves.slowMiddle,
+          duration: const Duration(milliseconds: 300),
+        ),
       ),
-
-
     );
   }
 }
-
-

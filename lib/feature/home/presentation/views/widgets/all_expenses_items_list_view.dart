@@ -45,8 +45,10 @@ class _AllExpensesItemsListViewState extends State<AllExpensesItemsListView> {
                       : EdgeInsets.zero,
                   child: AllExpensesItem(
                     onSelected: () {
-                      indexSelected = e.key;
-                      setState(() {});
+
+                      setState(() {
+                        indexSelected = e.key;
+                      });
                     },
                     itemModel: e.value,
                     isActive: e.key == indexSelected ? true : false,

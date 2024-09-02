@@ -16,12 +16,17 @@ class AllExpensesItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap:onSelected ,
-      child: isActive
-          ? ActiveAllExpensesItem(
+      child: AnimatedCrossFade(
+        firstChild: ActiveAllExpensesItem(
 
-              itemModel: itemModel,
-            )
-          : InActiveAllExpensesItem(itemModel: itemModel),
+          itemModel: itemModel,
+        ),
+        secondChild: InActiveAllExpensesItem(itemModel: itemModel),
+        crossFadeState:
+        isActive ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+        firstCurve: Curves.slowMiddle,
+        duration: const Duration(milliseconds: 250),
+      ),
     );
   }
 }
