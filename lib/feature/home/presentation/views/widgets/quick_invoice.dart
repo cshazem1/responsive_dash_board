@@ -6,25 +6,30 @@ import 'package:responsive_dash_board/feature/home/presentation/views/widgets/qu
 import 'package:responsive_dash_board/feature/home/presentation/views/widgets/quick_invoice_header.dart';
 import 'package:responsive_dash_board/feature/home/presentation/views/widgets/title_text_field.dart';
 
+import 'custom_button.dart';
+
 class QuickInvoice extends StatelessWidget {
   const QuickInvoice({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const SingleChildScrollView(
-      child: CustomBackgroundContainer(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          QuickInvoiceHeader(),
-          SizedBox(height: 8,),
-          LatestTransactionSection(),
-          Divider(
-            height: 48,
-          ),
-          QuickInvoiceForm()
-        ],
-      )),
+      child: Padding(
+        padding: EdgeInsets.only(),
+        child: CustomBackgroundContainer(
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            QuickInvoiceHeader(),
+            SizedBox(height: 8,),
+            LatestTransactionSection(),
+            Divider(
+              height: 24,
+            ),
+            QuickInvoiceForm(),
+          ],
+        )),
+      ),
     );
   }
 }
