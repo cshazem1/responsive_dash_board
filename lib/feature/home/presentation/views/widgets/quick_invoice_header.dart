@@ -7,7 +7,9 @@ class QuickInvoiceHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(children: [
+    return  Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
       Text("Quick Invoice",style: AppStyles.styleSemiBold20(context),
 
 

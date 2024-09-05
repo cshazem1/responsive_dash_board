@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/core/models/drawer_item_model.dart';
+import 'package:responsive_dash_board/feature/home/data/models/user_info_model.dart';
 import 'package:responsive_dash_board/feature/home/presentation/views/widgets/active&inactive_item.dart';
 import 'package:responsive_dash_board/feature/home/presentation/views/widgets/user_info_list_tile.dart';
 
 import '../../../../../core/utils/app_images.dart';
+import '../../../data/models/drawer_item_model.dart';
 import 'drawer_item_list_view.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -16,14 +17,8 @@ class CustomDrawer extends StatelessWidget {
       child: const CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: Card(
-              color: Color(0xffFAFAFA),
-              elevation: 0,
-              child: UserInfoListTile(
-                title: "Lekan Okeowo",
-                image: Assets.imagesAvatar3,
-                subTitle: "demo@gmail.com",
-              ),
+            child: UserInfoListTile(
+              userInfoModel: UserInfoModel(title: "Lekan Okeowo", email: "demo@gmail.com", image: Assets.imagesAvatar1),
             ),
           ),
           SliverToBoxAdapter(
