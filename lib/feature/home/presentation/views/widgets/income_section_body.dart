@@ -10,7 +10,9 @@ class IncomeSectionBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return  const Row(
+      mainAxisAlignment:MainAxisAlignment.center,
+
       children: [
         Expanded(
             flex: 1,
