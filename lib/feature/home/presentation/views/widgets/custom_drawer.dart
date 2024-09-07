@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/feature/home/data/models/user_info_model.dart';
 import 'package:responsive_dash_board/feature/home/presentation/views/widgets/active&inactive_item.dart';
+import 'package:responsive_dash_board/feature/home/presentation/views/widgets/custom_background_container.dart';
 import 'package:responsive_dash_board/feature/home/presentation/views/widgets/user_info_list_tile.dart';
 
 import '../../../../../core/utils/app_images.dart';
@@ -12,9 +13,8 @@ class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: const CustomScrollView(
+    return const CustomBackgroundContainer(
+      child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: UserInfoListTile(
