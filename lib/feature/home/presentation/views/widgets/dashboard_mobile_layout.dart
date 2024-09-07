@@ -13,7 +13,6 @@ class DashBoardMobileLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SingleChildScrollView(child: Column(
       children: [
-        SizedBox(height: 24,),
         AllExpensesAndQuickInvoiceSection(),
         SizedBox(height: 24,),
         MyCardSectionAndTransactionHistory(),
