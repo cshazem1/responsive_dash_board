@@ -1,9 +1,14 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'feature/home/presentation/views/dashboard_view.dart';
 
 void main() {
-  runApp(const ResponsiveDashView());
+  runApp(  DevicePreview(
+    enabled: !kReleaseMode,
+    builder: (context) => const ResponsiveDashView(), // Wrap your app
+  ),);
 }
 
 class ResponsiveDashView extends StatelessWidget {
@@ -13,6 +18,10 @@ class ResponsiveDashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-  return const MaterialApp(home:
+  return  MaterialApp(
+    locale: DevicePreview.locale(context),
+    builder: DevicePreview.appBuilder,
+
+    home:
   DashboardView()
     ,debugShowCheckedModeBanner: false,);}}

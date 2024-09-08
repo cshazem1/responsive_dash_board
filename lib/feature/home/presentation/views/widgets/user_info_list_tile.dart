@@ -20,12 +20,21 @@ class UserInfoListTile extends StatelessWidget {
           userInfoModel.image,
           height: getResponsiveFontSize(context, fontSize: 45),
         ),
-        title: Text(
-          userInfoModel.title,
-          style: AppStyles.styleSemiBold16(context),
+        title: FittedBox(
+          alignment: AlignmentDirectional.centerStart,
+
+          fit: BoxFit.scaleDown,
+          child: Text(
+            userInfoModel.title,
+            style: AppStyles.styleSemiBold16(context),
+          ),
         ),
         subtitle:
-            Text(userInfoModel.email, style: AppStyles.styleRegular12(context)),
+            FittedBox(
+                alignment: AlignmentDirectional.centerStart,
+
+                fit: BoxFit.scaleDown,
+                child: Text(userInfoModel.email, style: AppStyles.styleRegular12(context))),
       ),
     );
   }

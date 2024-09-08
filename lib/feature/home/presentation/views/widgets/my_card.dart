@@ -10,7 +10,7 @@ class MyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-        aspectRatio: 1.5,
+        aspectRatio: 420/215,
         child: Container(
           decoration: ShapeDecoration(
             image: const DecorationImage(
@@ -29,7 +29,7 @@ class MyCard extends StatelessWidget {
             children: [
               ListTile(
                 contentPadding:
-                    const EdgeInsets.only(left: 31, right: 42, top: 8),
+                    const EdgeInsets.only(left: 31, right: 42, top: 0),
                 title: Text(
                   "Name card",
                   style: AppStyles.styleRegular16(context)
@@ -63,8 +63,10 @@ class MyCard extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 54 - 28,
+              const Flexible(
+                child: SizedBox(
+                  height: 54 - 28,
+                ),
               ),
             ],
           ),
