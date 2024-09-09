@@ -17,7 +17,7 @@ class DashBoardMobileLayout extends StatelessWidget {
         SizedBox(height: 24,),
         MyCardSectionAndTransactionHistory(),
         SizedBox(height: 24,),
-        IncomeSection()
+        IncomeSection(),
       ],
     ));
   }
